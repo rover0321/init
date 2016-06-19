@@ -10,8 +10,8 @@ mkdir ins
 mkdir sft
 
 #init git config
-git config --global user.email="rover0321@qq.com"
-git config --global user.name="huangxiang"
+git config --global user.email "rover0321@qq.com"
+git config --global user.name "huangxiang"
 
 echo 'git clone https://github.com/rover0321/ini.git'
 echo -n 'yes or no'
