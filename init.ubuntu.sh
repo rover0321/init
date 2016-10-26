@@ -1,35 +1,65 @@
 #!/bin/bash
+read -p "Would you like to update this system? y/n " cmd
+if [ $cmd == 'y' ];then
+    sudo apt-get update
+fi
 
-sudo apt-get update
-sudo apt-get install openssh-server openssh-client git
+read -p "Would you like to install openssh-server and openssh-client for you? y/n " cmd
+if [ $cmd == 'y' ];then 
+    sudo apt-get install openssh-server openssh-client
+fi
 
 #init dirs
+echo 'init dirs'
 cd
-mkdir wks
-mkdir ins
-mkdir sft
+if [ ! -d ~/wks ];then
+    mkdir wks
+fi
+
+if [ ! -d ~/ins ];then
+    mkdir ins
+fi
+
+if [ ! -d ~/sft ];then
+    mkdir sft
+fi
 
 #init git config
-git config --global user.email "rover0321@qq.com"
-git config --global user.name "huangxiang"
+read -p "Would you like to config git? y/n "
+if [ $cmd == 'y'];then
+    git config --global user.email "rover0321@qq.com"
+    git config --global user.name "huangxiang"
+fi
 
 echo 'git clone https://github.com/rover0321/ini.git'
 git clone https://github.com/rover0321/ini.git
 
-echo 'git clone https://github.com/rover0321/bin.git'
-git clone https://github.com/rover0321/bin.git
+read -p "Would you like clone utility commonds from github? y/n" cmd
+if [ $cmd == 'y' ];then
+    echo 'git clone https://github.com/rover0321/bin.git'
+    git clone https://github.com/rover0321/bin.git
+fi
 
-echo 'back up old .bashrc file.'
-mv .bashrc .bashrc.ori
-ln -s ini/bashrc .bashrc
+if [ ! -f .bashrc ];then
+    echo 'back up old .bashrc file.'
+    mv .bashrc .bashrc.ori
+    ln -s ini/bashrc .bashrc
+fi
 
-echo 'back up old .profile file.'
-mv .profile .profile.ori
-ln -s ini/profile .profile
+if [ ! -f .profile ];then
+    echo 'back up old .profile file.'
+    mv .profile .profile.ori
+    ln -s ini/profile .profile
+fi
 
-echo 'back up old .gitconfig file.'
-mv .gitconfig .gitconfig.ori
-ln -s ini/gitconfig .gitconfig
+read -p "Would you like to add custom .gitignore file? y/n " cmd
+if [ $cmd == 'y' ];then
+    echo 'back up old .gitignore file.'
+    mv .gitignore .gitignore.ori
+    ln -s ini/gitignore .gitignore
+fi
 
-echo 'launch new .bashrc file.'
-. .bashrc
+echo 'Launch new .bashrc file.'
+source .bashrc
+
+echo 'Exit script.'
