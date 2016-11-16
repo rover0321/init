@@ -40,13 +40,17 @@ if [ $cmd == 'y' ];then
     git clone https://github.com/rover0321/bin.git
 fi
 
-if [ ! -f .bashrc ];then
+os = `uname`
+if [ -f .bashrc ];then
     echo 'back up old .bashrc file.'
     mv .bashrc .bashrc.ori
     ln -s ini/bashrc .bashrc
+    if [ $os == 'Darwin' ];then
+       ln -s .bashrc .bash_profile
+    fi
 fi
 
-if [ ! -f .profile ];then
+if [ -f .profile ];then
     echo 'back up old .profile file.'
     mv .profile .profile.ori
     ln -s ini/profile .profile
