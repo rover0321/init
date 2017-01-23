@@ -56,6 +56,12 @@ if [ -f .profile ];then
     ln -s ini/profile .profile
 fi
 
+if [ -f .vimrc ];then
+    echo 'Back up old .vimrc file.'
+    mv .vimrc .vimrc.ori
+    ln -s ini/vimrc .vimrc
+fi
+
 read -p "Would you like to add custom .gitignore file? y/n " cmd
 if [ $cmd == 'y' ];then
     echo 'back up old .gitignore file.'
