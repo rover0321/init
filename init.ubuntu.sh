@@ -40,7 +40,7 @@ if [ $cmd == 'y' ];then
     git clone https://github.com/rover0321/bin.git
 fi
 
-os = `uname`
+os=`uname`
 if [ -f .bashrc ];then
     echo 'back up old .bashrc file.'
     mv .bashrc .bashrc.ori
