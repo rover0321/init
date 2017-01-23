@@ -25,8 +25,8 @@ if [ ! -d ~/sft ];then
 fi
 
 #init git config
-read -p "Would you like to config git? y/n "
-if [ $cmd == 'y'];then
+read -p "Would you like to config git? y/n " cmd
+if [ $cmd == 'y' ];then
     git config --global user.email "rover0321@qq.com"
     git config --global user.name "huangxiang"
 fi
@@ -34,7 +34,7 @@ fi
 echo 'git clone https://github.com/rover0321/ini.git'
 git clone https://github.com/rover0321/ini.git
 
-read -p "Would you like clone utility commonds from github? y/n" cmd
+read -p "Would you like clone utility commonds from github? y/n " cmd
 if [ $cmd == 'y' ];then
     echo 'git clone https://github.com/rover0321/bin.git'
     git clone https://github.com/rover0321/bin.git
