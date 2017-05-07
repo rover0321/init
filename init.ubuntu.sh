@@ -29,6 +29,7 @@ read -p "Would you like to config git? y/n " cmd
 if [ $cmd == 'y' ];then
     git config --global user.email "rover0321@qq.com"
     git config --global user.name "huangxiang"
+    git config --global core.editor vim
 fi
 
 echo 'git clone https://github.com/rover0321/ini.git'
@@ -44,31 +45,33 @@ os=`uname`
 if [ -f .bashrc ];then
     echo 'back up old .bashrc file.'
     mv .bashrc .bashrc.ori
+fi
+if [ $os == 'Darwin' ];then
+    ln -s .bashrc .bash_profile
+else
     ln -s ini/bashrc .bashrc
-    if [ $os == 'Darwin' ];then
-       ln -s .bashrc .bash_profile
-    fi
 fi
 
 if [ -f .profile ];then
     echo 'back up old .profile file.'
     mv .profile .profile.ori
-    ln -s ini/profile .profile
 fi
+ln -s ini/profile .profile
 
 if [ -f .vimrc ];then
     echo 'Back up old .vimrc file.'
     mv .vimrc .vimrc.ori
-    ln -s ini/vimrc .vimrc
 fi
+ln -s ini/vimrc .vimrc
 
-read -p "Would you like to add custom .gitignore file? y/n " cmd
-if [ $cmd == 'y' ];then
-    echo 'back up old .gitignore file.'
-    mv .gitignore .gitignore.ori
-    ln -s ini/gitignore .gitignore
+if [-f .gitignore ];then
+    read -p "Would you like to add custom .gitignore file? y/n " cmd
+    if [ $cmd == 'y' ];then
+        echo 'back up old .gitignore file.'
+        mv .gitignore .gitignore.ori
+        ln -s ini/gitignore .gitignore
+    fi
 fi
-
 echo 'Launch new .bashrc file.'
 source .bashrc
 
