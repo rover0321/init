@@ -32,8 +32,11 @@ if [ $cmd == 'y' ];then
     git config --global core.editor vim
 fi
 
-echo 'git clone https://github.com/rover0321/ini.git'
-git clone https://github.com/rover0321/ini.git
+read -p "Would you like to clone ini from github? y/n " cmd
+if [ $cmd == 'y' ];then
+    echo 'git clone https://github.com/rover0321/ini.git'
+    git clone https://github.com/rover0321/ini.git
+fi
 
 read -p "Would you like clone utility commonds from github? y/n " cmd
 if [ $cmd == 'y' ];then
