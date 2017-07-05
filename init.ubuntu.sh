@@ -64,7 +64,7 @@ if [ -f .vimrc ];then
 fi
 ln -s ini/vimrc .vimrc
 
-if [-f .gitignore ];then
+if [ -f .gitignore ];then
     read -p "Would you like to add custom .gitignore file? y/n " cmd
     if [ $cmd == 'y' ];then
         echo 'back up old .gitignore file.'
