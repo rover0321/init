@@ -68,7 +68,7 @@ fi
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz
+    wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz
     tar -xzvf apache-tomcat-8.5.16.tar.gz
     ln -s ~/sft/apache-tomcat-8.5.16 ~/ins/tmc
 fi
