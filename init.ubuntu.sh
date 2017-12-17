@@ -115,4 +115,9 @@ fi
 echo 'Launch new .bashrc file.'
 source .bashrc
 
+read -p "Would you like install build-essential for you? y/n " cmd
+if [ $cmd == 'y' ]; then
+    sudo apt-get install build-essential
+fi
+
 echo 'Exit init.sh script.'
