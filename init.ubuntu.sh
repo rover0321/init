@@ -51,26 +51,25 @@ cd ~/sft
 # download and config maven
 read -p "Would you like download maven for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    echo 'wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz'
-    wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
-    tar -xzvf apache-maven-3.5.0-bin.tar.gz
-    ln -s ~/sft/apache-maven-3.5.0 ~/ins/mvn
+    wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+    tar -xzvf apache-maven-3.5.2-bin.tar.gz
+    ln -s ~/sft/apache-maven-3.5.2 ~/ins/mvn
 fi
 
 # download and config jdk
 read -p "Would you like download jdk for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
-    tar -xzvf jdk-8u131-linux-x64.tar.gz
+    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz
+    tar -xzvf jdk-8u151-linux-x64.tar.gz
     ln -s ~/sft/jdk1.8.0_131 ~/ins/jdk
 fi
 
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz
-    tar -xzvf apache-tomcat-8.5.16.tar.gz
-    ln -s ~/sft/apache-tomcat-8.5.16 ~/ins/tmc
+    wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz
+    tar -xzvf apache-tomcat-8.5.24.tar.gz
+    ln -s ~/sft/apache-tomcat-8.5.24 ~/ins/tmc
 fi
 
 # back to home directory
