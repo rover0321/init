@@ -59,8 +59,7 @@ fi
 # download and config jdk
 read -p "Would you like download jdk for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz
-    tar -xzvf jdk-8u151-linux-x64.tar.gz
+    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz
     ln -s ~/sft/jdk1.8.0_131 ~/ins/jdk
 fi
 
