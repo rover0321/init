@@ -48,6 +48,7 @@ fi
 # switch to sft
 cd ~/sft
 
+line
 # download and config maven
 read -p "Would you like download maven for you? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -56,6 +57,15 @@ if [ $cmd == 'y' ];then
     ln -s ~/sft/apache-maven-3.5.2 ~/ins/mvn
 fi
 
+read -p "Would you like config settings.xml for you? y/n " cmd
+if [ $cmd == 'y' ]; then
+    if [ -f ~/ins/mvn/conf/settings.xml ];then
+        rm -f ~/ins/mvn/conf/settings.xml
+    fi
+    ln -s ini/settings.xml ~/ins/mvn/conf/settings.xml
+fi
+
+line
 # download and config jdk
 read -p "Would you like download jdk for you? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -64,6 +74,7 @@ if [ $cmd == 'y' ];then
     ln -s ~/sft/jdk1.8.0_161 ~/ins/jdk
 fi
 
+line
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -72,9 +83,11 @@ if [ $cmd == 'y' ];then
     ln -s ~/sft/apache-tomcat-8.5.24 ~/ins/tmc
 fi
 
-# back to home directory
+# Switch to user home directory.
 cd ~
 
+# config bashrc and profile
+line
 read -p "Would you like config .bashrc and .profile for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     os=`uname`
@@ -101,6 +114,7 @@ if [ $cmd == 'y' ]; then
     ln -s ini/vimrc .vimrc
 fi
 
+line
 read -p "Would you like config .gitignore for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     if [ -f .gitignore ];then
@@ -112,9 +126,11 @@ if [ $cmd == 'y' ]; then
         fi
     fi
 fi
-echo 'Launch new .bashrc file.'
+
+echo 'Load new .bashrc file.'
 source .bashrc
 
+line
 read -p "Would you like install build-essential for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install build-essential
