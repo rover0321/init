@@ -62,7 +62,7 @@ if [ $cmd == 'y' ]; then
     if [ -f ~/ins/mvn/conf/settings.xml ];then
         rm -f ~/ins/mvn/conf/settings.xml
     fi
-    ln -s ini/settings.xml ~/ins/mvn/conf/settings.xml
+    ln -s ~/ini/settings.xml ~/ins/mvn/conf/settings.xml
 fi
 
 line
