@@ -24,14 +24,6 @@ if [ ! -d ~/sft ];then
     mkdir sft
 fi
 
-#init git config
-read -p "Would you like to config git? y/n " cmd
-if [ $cmd == 'y' ];then
-    git config --global user.email "rover0321@qq.com"
-    git config --global user.name "huangxiang"
-    git config --global core.editor vim
-fi
-
 read -p "Would you like to clone ini from github? y/n " cmd
 if [ $cmd == 'y' ];then
     echo 'git clone https://github.com/rover0321/ini.git'
@@ -93,6 +85,8 @@ if [ $cmd == 'y' ]; then
         mv .profile .profile.ori
     fi
     ln -s ini/profile .profile
+    echo "reload new env profile."
+    source .profile
 
     if [ -f .vimrc ];then
         echo 'Back up old .vimrc file.'
@@ -101,6 +95,13 @@ if [ $cmd == 'y' ]; then
     ln -s ini/vimrc .vimrc
 fi
 
+#init git config
+read -p "Would you like to config git? y/n " cmd
+if [ $cmd == 'y' ];then
+    ln -s ~/ini/gitconfig ~/.gitconfig
+fi
+
+# config .gitconfig file
 read -p "Would you like config .gitignore for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     if [ -f .gitignore ];then
