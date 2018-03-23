@@ -75,6 +75,17 @@ if [ $cmd == 'y' ];then
     ln -s ~/sft/apache-tomcat-8.5.24 ~/ins/tmc
 fi
 
+line
+read -p "Would you like install cmake? y/n " cmd
+if [ $cmd == 'y' ]; then
+    wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz && tar -xzvf cmake-3.10.3-Linux-x86_64.tar.gz && ln -s ~/sft/cmake-3.10.3-Linux-x86_64 ~/ins/cmake
+fi
+
+line
+read -p "Would you like install gdb? y/n " cmd
+if [ $cmd == 'y' ]; then
+    apt-get install gdb
+fi
 # Switch to user home directory.
 cd ~
 
@@ -136,6 +147,15 @@ line
 read -p "Would you like install build-essential for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install build-essential
+fi
+
+line
+read -p "Would you like install python-software-properties? y/n " cmd
+if [ $cmd == 'y' ]; then
+    sudo apt-get install python-software-properties
+    sudo apt-get update
+    sudo apt install software-properties-common
+    sudo apt-get update
 fi
 
 echo 'Exit init.sh script.'
