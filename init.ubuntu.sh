@@ -36,6 +36,35 @@ if [ $cmd == 'y' ];then
     git clone https://github.com/rover0321/bin.git
 fi
 
+# config bashrc and profile
+read -p "Would you like config .bashrc and .profile for you? y/n " cmd
+if [ $cmd == 'y' ]; then
+    os=`uname`
+    if [ -f .bashrc ];then
+        echo 'back up old .bashrc file.'
+        mv .bashrc .bashrc.ori
+    fi
+    if [ $os == 'Darwin' ];then
+        ln -s .bashrc .bash_profile
+    else
+        ln -s ini/bashrc .bashrc
+    fi
+
+    if [ -f .profile ];then
+        echo 'back up old .profile file.'
+        mv .profile .profile.ori
+    fi
+    ln -s ini/profile .profile
+    echo "reload new env profile."
+    source .profile
+
+    if [ -f .vimrc ];then
+        echo 'Back up old .vimrc file.'
+        mv .vimrc .vimrc.ori
+    fi
+    ln -s ini/vimrc .vimrc
+fi
+
 # begin download maven tomcat jdk
 # switch to sft
 cd ~/sft
@@ -84,40 +113,10 @@ fi
 line
 read -p "Would you like install gdb? y/n " cmd
 if [ $cmd == 'y' ]; then
-    apt-get install gdb
+    sudo apt-get install gdb
 fi
 # Switch to user home directory.
 cd ~
-
-# config bashrc and profile
-line
-read -p "Would you like config .bashrc and .profile for you? y/n " cmd
-if [ $cmd == 'y' ]; then
-    os=`uname`
-    if [ -f .bashrc ];then
-        echo 'back up old .bashrc file.'
-        mv .bashrc .bashrc.ori
-    fi
-    if [ $os == 'Darwin' ];then
-        ln -s .bashrc .bash_profile
-    else
-        ln -s ini/bashrc .bashrc
-    fi
-
-    if [ -f .profile ];then
-        echo 'back up old .profile file.'
-        mv .profile .profile.ori
-    fi
-    ln -s ini/profile .profile
-    echo "reload new env profile."
-    source .profile
-
-    if [ -f .vimrc ];then
-        echo 'Back up old .vimrc file.'
-        mv .vimrc .vimrc.ori
-    fi
-    ln -s ini/vimrc .vimrc
-fi
 
 line
 #init git config
