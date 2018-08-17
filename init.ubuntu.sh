@@ -73,9 +73,9 @@ line
 # download and config maven
 read -p "Would you like download maven for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
-    tar -xzvf apache-maven-3.5.3-bin.tar.gz
-    ln -s ~/sft/apache-maven-3.5.3 ~/ins/mvn
+    wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+    tar -xzvf apache-maven-3.5.4-bin.tar.gz
+    ln -s ~/sft/apache-maven-3.5.4 ~/ins/mvn
 fi
 
 read -p "Would you like config settings.xml for you? y/n " cmd
