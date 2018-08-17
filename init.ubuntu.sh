@@ -99,9 +99,9 @@ line
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz
-    tar -xzvf apache-tomcat-8.5.24.tar.gz
-    ln -s ~/sft/apache-tomcat-8.5.24 ~/ins/tmc
+    wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz
+    tar -xzvf apache-tomcat-8.5.32.tar.gz
+    ln -s ~/sft/apache-tomcat-8.5.32 ~/ins/tmc
 fi
 
 line
