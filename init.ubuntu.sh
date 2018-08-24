@@ -156,5 +156,9 @@ if [ $cmd == 'y' ]; then
     sudo apt install software-properties-common
     sudo apt-get update
 fi
-
+line
+read -p "Would you like install transmission-cli which is quitely convenient for download bt? y/n " cmd
+if [ $cmd == 'y' ]; then
+    sudo apt-get install transmission-cli
+fi
 echo 'Exit init.sh script.'
