@@ -73,7 +73,7 @@ line
 # download and config maven
 read -p "Would you like download maven for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+    wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
     tar -xzvf apache-maven-3.5.4-bin.tar.gz
     ln -s ~/sft/apache-maven-3.5.4 ~/ins/mvn
 fi
@@ -98,9 +98,12 @@ line
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz
-    tar -xzvf apache-tomcat-8.5.32.tar.gz
-    ln -s ~/sft/apache-tomcat-8.5.32 ~/ins/tmc
+    wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz
+    tar -xzvf apache-tomcat-8.5.34.tar.gz
+    if [ -f ~/ins/tmc ]; then
+        rm -rf ~/ins/tmc
+    fi
+    ln -s ~/sft/apache-tomcat-8.5.34 ~/ins/tmc
 fi
 
 line
