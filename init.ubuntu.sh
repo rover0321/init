@@ -117,6 +117,13 @@ read -p "Would you like install gdb? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install gdb
 fi
+
+line
+read -p "Would you like install pip3? y/n " cmd
+if [ $cmd == 'y' ]; then
+    sudo apt-get install python3-pip
+fi
+
 # Switch to user home directory.
 cd ~
 
