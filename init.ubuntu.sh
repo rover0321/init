@@ -98,12 +98,12 @@ line
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz
-    tar -xzvf apache-tomcat-8.5.34.tar.gz
+    wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.tar.gz
+    tar -xzvf apache-tomcat-8.5.38.tar.gz
     if [ -f ~/ins/tmc ]; then
         rm -rf ~/ins/tmc
     fi
-    ln -s ~/sft/apache-tomcat-8.5.34 ~/ins/tmc
+    ln -s ~/sft/apache-tomcat-8.5.38 ~/ins/tmc
 fi
 
 line
