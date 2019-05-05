@@ -87,10 +87,10 @@ if [ $cmd == 'y' ]; then
 fi
 
 line
-# download and config jdk
-read -p "Would you like download openjdk for you? y/n " cmd
+# install openjdk and source code.
+read -p "Would you like download openjdk-8-jdk and openjdk-8-source for you? y/n " cmd
 if [ $cmd == 'y' ];then
-    sudo apt-get install openjdk-8-jdk
+    sudo apt-get install openjdk-8-jdk && sudo apt-get install openjdk-8-source
     ln -s /usr/lib/jvm/java-8-openjdk-amd64 ~/ins/jdk
 fi
 
