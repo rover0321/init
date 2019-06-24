@@ -1,4 +1,6 @@
 #!/bin/bash
+set -o nounset
+set -o errexit
 read -p "Would you like to update this system? y/n " cmd
 if [ $cmd == 'y' ];then
     sudo apt-get update
