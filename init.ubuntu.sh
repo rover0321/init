@@ -71,7 +71,6 @@ fi
 # switch to sft
 cd ~/sft
 
-line
 # download and config maven
 read -p "Would you like download maven for you? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -88,7 +87,6 @@ if [ $cmd == 'y' ]; then
     ln -s ~/ini/settings.xml ~/ins/mvn/conf/settings.xml
 fi
 
-line
 # install openjdk and source code.
 read -p "Would you like download openjdk-8-jdk and openjdk-8-source for you? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -96,7 +94,6 @@ if [ $cmd == 'y' ];then
     ln -s /usr/lib/jvm/java-8-openjdk-amd64 ~/ins/jdk
 fi
 
-line
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -108,19 +105,16 @@ if [ $cmd == 'y' ];then
     ln -s ~/sft/apache-tomcat-8.5.38 ~/ins/tmc
 fi
 
-line
 read -p "Would you like install cmake? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install cmake
 fi
 
-line
 read -p "Would you like install gdb? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install gdb
 fi
 
-line
 read -p "Would you like install pip3? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install python3-pip
@@ -129,7 +123,6 @@ fi
 # Switch to user home directory.
 cd ~
 
-line
 #init git config
 read -p "Would you like to config git? y/n " cmd
 if [ $cmd == 'y' ];then
@@ -137,7 +130,6 @@ if [ $cmd == 'y' ];then
 fi
 
 # config .gitconfig file
-line
 read -p "Would you like config .gitignore for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     if [ -f .gitignore ];then
@@ -153,13 +145,11 @@ fi
 echo 'Load new .bashrc file.'
 source .bashrc
 
-line
 read -p "Would you like install build-essential for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install build-essential
 fi
 
-line
 read -p "Would you like install python-software-properties? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install python-software-properties
@@ -167,7 +157,6 @@ if [ $cmd == 'y' ]; then
     sudo apt install software-properties-common
     sudo apt-get update
 fi
-line
 read -p "Would you like install transmission-cli which is quitely convenient for download bt? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install transmission-cli
