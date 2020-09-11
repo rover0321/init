@@ -58,7 +58,6 @@ if [ $cmd == 'y' ]; then
     fi
     ln -s ini/profile .profile
     echo "reload new env profile."
-    source .profile
 
     if [ -f .vimrc ];then
         echo 'Back up old .vimrc file.'
@@ -97,6 +96,7 @@ fi
 # download and config tomcat
 read -p "Would you like download tomcat for you? y/n " cmd
 if [ $cmd == 'y' ];then
+	# 此处需求解析一下网页内容，获取最新的tomcat版本，然后动态生成链接。
     wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.tar.gz
     tar -xzvf apache-tomcat-8.5.38.tar.gz
     if [ -f ~/ins/tmc ]; then
