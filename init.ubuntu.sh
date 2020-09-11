@@ -150,6 +150,12 @@ if [ $cmd == 'y' ]; then
     sudo apt-get install build-essential
 fi
 
+
+read -p "Would you like install docker-ce for you? y/n " cmd
+if [ $cmd == 'y' ]; then
+    sudo apt-get install docker-ce
+fi
+
 read -p "Would you like install python-software-properties? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install python-software-properties
