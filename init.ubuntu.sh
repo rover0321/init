@@ -142,9 +142,6 @@ if [ $cmd == 'y' ]; then
     fi
 fi
 
-echo 'Load new .bashrc file.'
-source .bashrc
-
 read -p "Would you like install build-essential for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     sudo apt-get install build-essential
