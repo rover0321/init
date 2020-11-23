@@ -164,4 +164,11 @@ read -p "Would you like install transmission-cli which is quitely convenient for
 if [ $cmd == 'y' ]; then
     sudo apt-get install transmission-cli
 fi
+
+
+read -p "Would you like to download anaconda3? y/n " cmd
+if [ $cmd == 'y' ]; then
+    wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.11-Linux-x86_64.sh
+fi
+
 echo 'Exit init.sh script.'
