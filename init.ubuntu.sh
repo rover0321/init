@@ -1,10 +1,6 @@
 #!/bin/bash
 set -o nounset
 set -o errexit
-read -p "Would you like to update this system? y/n " cmd
-if [ $cmd == 'y' ];then
-    sudo apt-get update
-fi
 
 read -p "Would you like to install openssh-server and openssh-client for you? y/n " cmd
 if [ $cmd == 'y' ];then 
@@ -26,6 +22,14 @@ if [ ! -d ~/sft ];then
     mkdir sft
 fi
 
+echo "update mirrors..."
+mv /etc/apt/sources.list /etc/apt/sources.list.bak
+ln -s $HOME/ini/sources.list /etc/apt/sources.list
+
+read -p "Would you like to update this system? y/n " cmd
+if [ $cmd == 'y' ];then
+    sudo apt-get update
+fi
 read -p "Would you like to clone ini from github? y/n " cmd
 if [ $cmd == 'y' ];then
     echo 'git clone https://github.com/rover0321/ini.git'
