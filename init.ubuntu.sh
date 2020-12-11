@@ -156,6 +156,8 @@ read -p "Would you like install docker-ce for you? y/n " cmd
 if [ $cmd == 'y' ]; then
     curl -fsSL get.docker.com -o get-docker.sh
     sudo sh get-docker.sh --mirror Aliyun
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
 fi
 
 read -p "Would you like install python-software-properties? y/n " cmd
