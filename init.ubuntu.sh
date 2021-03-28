@@ -64,11 +64,11 @@ if [ $cmd == 'y' ]; then
 fi
 
 echo "update mirrors..."
-os=`name -m`
+os=`uname -m`
 echo $os
 if [ $os == 'armv7l' ];then
     sudo cp ~/ini/sources.list /etc/apt/sources.list
-    Sudo cp ~/ini/raspi.list /etc/apt/sources.list.d/raspi.list
+    sudo cp ~/ini/raspi.list /etc/apt/sources.list.d/raspi.list
 fi
 
 read -p "Would you like to update this system? y/n " cmd
