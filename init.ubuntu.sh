@@ -22,14 +22,7 @@ if [ ! -d ~/sft ];then
     mkdir sft
 fi
 
-echo "update mirrors..."
-mv /etc/apt/sources.list /etc/apt/sources.list.bak
-ln -s $HOME/ini/sources.list /etc/apt/sources.list
 
-read -p "Would you like to update this system? y/n " cmd
-if [ $cmd == 'y' ];then
-    sudo apt-get update
-fi
 read -p "Would you like to clone ini from github? y/n " cmd
 if [ $cmd == 'y' ];then
     echo 'git clone https://github.com/rover0321/ini.git'
@@ -68,6 +61,19 @@ if [ $cmd == 'y' ]; then
         mv .vimrc .vimrc.ori
     fi
     ln -s ini/vimrc .vimrc
+fi
+
+echo "update mirrors..."
+os=`name -m`
+echo $os
+if [ $os == 'armv7l' ];then
+    sudo cp ~/ini/sources.list /etc/apt/sources.list
+    Sudo cp ~/ini/raspi.list /etc/apt/sources.list.d/raspi.list
+fi
+
+read -p "Would you like to update this system? y/n " cmd
+if [ $cmd == 'y' ];then
+    sudo apt-get update
 fi
 
 # begin download maven tomcat jdk
