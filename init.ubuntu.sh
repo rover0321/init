@@ -96,11 +96,18 @@ if [ $cmd == 'y' ]; then
     ln -s ~/ini/settings.xml ~/ins/mvn/conf/settings.xml
 fi
 
-# install openjdk and source code.
+# install openjdk.
 read -p "Would you like download openjdk-8-jdk for you? y/n " cmd
 if [ $cmd == 'y' ];then
     sudo apt-get install openjdk-8-jdk
     ln -s /usr/lib/jvm/java-8-openjdk-amd64 ~/ins/jdk
+fi
+
+
+# install openjdk source code.
+read -p "Would you like download openjdk-8-source for you? y/n " cmd
+if [ $cmd == 'y' ];then
+    sudo apt-get install openjdk-8-source
 fi
 
 # download and config tomcat
